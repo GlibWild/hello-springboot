@@ -25,4 +25,6 @@ public class Work {
     String defaultPassword;
     @Value("#{new java.text.SimpleDateFormat('${time.format}').format(new java.util.Date())}")
     String createTime;
+    @Value("${test.work-name}")
+    String workName;
 }

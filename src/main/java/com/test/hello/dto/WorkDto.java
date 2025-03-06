@@ -10,4 +10,5 @@ public class WorkDto {
     int workId;
     String defaultPassword;
     String createTime;
+    String workName;
 }

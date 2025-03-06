@@ -21,7 +21,10 @@ public class HelloController {
 
     @GetMapping("config") //路由post注解
     public WorkDto hello() {
-        return WorkMapper.INSTANCE.toDto(work);
+        log.info(work.toString());
+        WorkDto workDto = WorkMapper.INSTANCE.toDto(work);
+        log.info(workDto.toString());
+        return workDto;
     }
 
     @GetMapping("/school")
