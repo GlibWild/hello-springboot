@@ -1,16 +1,15 @@
 package com.test.hello.controllers;
 
 import com.test.hello.bean.Book;
+import com.test.hello.bean.School;
 import com.test.hello.bean.Work;
-import com.test.hello.dto.BookMapper;
-import com.test.hello.dto.BookDto;
+import com.test.hello.dto.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 @RestController //Controller+ResponseBody注解
 @Slf4j //日志注解
@@ -21,11 +20,14 @@ public class HelloController {
     private Work work;
 
     @GetMapping("config") //路由post注解
-    public Map<String, String> hello() {
-        Map<String, String> map = new HashMap<>();
-        map.put("workId", work.getWorkId() + "");
-        map.put("defaultPassword", work.getDefaultPassword());
-        return map;
+    public WorkDto hello() {
+        return WorkMapper.INSTANCE.toDto(work);
+    }
+
+    @GetMapping("/school")
+    public SchoolDto school(){
+        School school = new School();
+        return SchoolMapper.INSTANCE.toDto(school);
     }
 
     @GetMapping("/{id}") //路由get注解

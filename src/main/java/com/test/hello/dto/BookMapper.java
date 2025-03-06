@@ -17,3 +17,4 @@ public interface BookMapper {
     })
     BookDto toBookDto(Book book);
 }
+
