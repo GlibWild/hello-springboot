@@ -7,8 +7,8 @@ import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring") //mapstruct注解
-public interface BookMapper {
-    BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
+public interface BookDtoMapper {
+    BookDtoMapper INSTANCE = Mappers.getMapper(BookDtoMapper.class);
 
     @Mappings({ //映射关系
             @Mapping(source = "name", target = "name"),

@@ -3,7 +3,8 @@ package com.test.hello.dto;
 import lombok.Data;
 
 @Data
-public class SchoolDto {
+public class UserDto {
+    public int id;
     public String name;
-    public String address;
+    public String password;
 }
